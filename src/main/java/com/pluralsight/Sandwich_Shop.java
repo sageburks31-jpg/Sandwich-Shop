@@ -12,7 +12,6 @@ public class Sandwich_Shop {
     static int ansint=0;
     static int ansint2=0;
     static double ansdouble=0.0;
-
     public static void main(String[] args) {
 
         prices.add(5.45);
