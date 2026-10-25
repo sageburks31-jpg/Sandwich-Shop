@@ -26,12 +26,25 @@ public class Sandwich_Shop {
         totalPrice=prices.get(ansint-1);
 
         System.out.println(" list of sandwich load sizes:");
-        System.out.println("1: Regular: $1.00");
-        System.out.println("2: Large: $1.75");
+        System.out.println("Regular: $1.00");
+        System.out.println("Large: $1.75");
         System.out.println("1 is yes while 0 is no");
         System.out.print("do you want to load your sandwich(1/0)->: ");
 
         ansint2=scanner.nextInt();
+
+        System.out.print("what is your age? enter here ->: ");
+        ansdouble=scanner.nextDouble();
+
+        if (ansdouble<=17){
+            discount=.1;
+        } else if (ansdouble>=65){
+            discount=.2;
+        }
+
+        double subPrice = totalPrice*discount;
+
+        totalPrice=totalPrice-subPrice;
 
         if (ansint2==1){
             if (ansint==1){
@@ -41,16 +54,7 @@ public class Sandwich_Shop {
             }
         }
 
-        System.out.print("what is your age? enter here ->: ");
-        ansdouble=scanner.nextDouble();
-
-        if (ansdouble<=17){
-            discount=.9;
-        } else if (ansdouble>=65){
-            discount=.8;
-        }
-
-        System.out.println("the cost of the sandwich is $"+totalPrice);
+        System.out.print(String.format("the cost of the sandwich is $%.2f",totalPrice));
 
     }
 }
